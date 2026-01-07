@@ -99,5 +99,44 @@ body {
   width: 240px;
   left: 10px;
   height: 200px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  background: #0f172a;
+}
+
+.carousel__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 40%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.carousel__cell p {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  padding: 0 10px;
+  color: #c33827;
+  text-align: center;
+  font-weight: 900;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carousel__cell:hover p {
+  transform: translateY(-5px);
+  text-shadow: 0 0 15px rgba(195, 56, 39, 0.6), 0 0 5px rgba(195, 56, 39, 0.4);
 }
