@@ -1,4 +1,4 @@
-import SectionHeader from "../../../../elements/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import useEnrolled from "../../../../hooks/useEnrolled";
 import EnrolledTable from "./EnrolledTable";
 

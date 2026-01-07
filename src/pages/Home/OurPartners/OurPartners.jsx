@@ -1,5 +1,5 @@
-import SectionHeader from "../../../elements/SectionHeader";
-import SectionImgBg from "../../../elements/SectionImgBg";
+import SectionHeader from "../../../components/common/SectionHeader";
+import SectionImgBg from "../../../components/common/SectionImgBg";
 
 const OurPartners = () => {
   return (

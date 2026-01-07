@@ -1,4 +1,4 @@
-import SectionHeader from "../../../../elements/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import useStudents from "../../../../hooks/useStudents";
 import ManageUsersTable from "./ManageUsersTable";
 

@@ -3,8 +3,8 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import { imgHostingKey } from "../../../../constants";
-import SectionHeader from "../../../../elements/SectionHeader";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
 

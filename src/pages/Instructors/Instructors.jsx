@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import SectionImgBg from "../../elements/SectionImgBg";
-import SectionHeader from "../../elements/SectionHeader";
-import MiddleAlign from "../../elements/MiddleAlign";
-import InstructorCard from "../../elements/InstructorCard";
+import InstructorCard from "../../components/common/InstructorCard";
+import MiddleAlign from "../../components/common/MiddleAlign";
+import SectionHeader from "../../components/common/SectionHeader";
+import SectionImgBg from "../../components/common/SectionImgBg";
 
 const Instructors = () => {
   const teachers = useLoaderData();

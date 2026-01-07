@@ -1,11 +1,11 @@
-import SectionHeader from "../../../../elements/SectionHeader";
-import { useForm } from "react-hook-form";
-import useAuth from "../../../../hooks/useAuth";
 import axios from "axios";
-import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
-import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import { imgHostingKey } from "../../../../constants";
+import useAuth from "../../../../hooks/useAuth";
+import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
 
 const AddAClass = () => {
   const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { BsFillEyeFill } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/layout/social-login/SocialLogin";
 import useAuth from "../../hooks/useAuth";
-import SocialLogin from "../shared/SocialLogin/SocialLogin";
-import { BsFillEyeFill } from "react-icons/bs";
 
 const Login = () => {
   const { signIn } = useAuth();

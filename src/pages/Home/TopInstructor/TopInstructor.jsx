@@ -1,37 +1,31 @@
 import { useLoaderData } from "react-router-dom";
-import SectionHeader from "../../../elements/SectionHeader";
-import InstructorCard from "../../../elements/InstructorCard";
-import SectionImgBg from "../../../elements/SectionImgBg";
+import InstructorCard from "../../../components/common/InstructorCard";
+import SectionHeader from "../../../components/common/SectionHeader";
 
 const TopInstructor = () => {
   const classes = useLoaderData();
   return (
-    <SectionImgBg
-      bg_img={
-        "https://forestsangha-163c.kxcdn.com/images/W1siZiIsIjIwMTUvMDgvMTUvNnUwYmw4a3FobF9UaGFpbGFuZF9XUE5fVHVkb25nXzY2LmpwZyJdXQ/a7840afb6e7d1efe/Thailand_WPN_Tudong_66.jpg"
-      }
-    >
-      <div className="pb-10">
+    <div className="bg-slate-800 py-24 relative overflow-hidden">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-bushido-red/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      
+      <div className="container mx-auto px-6 lg:px-24 relative z-10">
         <SectionHeader
-          heading="Most Popular Masters"
-          subHeading="Feel the ZEN of a real 'shaolin master'"
+          heading="Grand Masters"
+          subHeading="Learn from the industry's most respected martial arts experts"
         />
-        <div className="flex justify-center">
-          <div className="lg:grid grid-cols-3 gap-5">
-            {classes.map((item, index) => {
-              return (
-                <InstructorCard
-                  key={index}
-                  item={item}
-                  email={true}
-                  btn={true}
-                ></InstructorCard>
-              );
-            })}
-          </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {classes.slice(0, 3).map((item, index) => (
+            <InstructorCard
+              key={index}
+              item={item}
+              email={true}
+            />
+          ))}
         </div>
       </div>
-    </SectionImgBg>
+    </div>
   );
 };
 

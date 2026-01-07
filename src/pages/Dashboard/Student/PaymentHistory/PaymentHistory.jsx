@@ -1,4 +1,4 @@
-import SectionHeader from "../../../../elements/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import usePaymentHistory from "../../../../hooks/usePaymentHistory";
 import HistoryTable from "./HistoryTable";
 

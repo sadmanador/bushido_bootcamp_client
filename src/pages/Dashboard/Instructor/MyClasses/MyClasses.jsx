@@ -1,4 +1,4 @@
-import SectionHeader from "../../../../elements/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import useInstructorClass from "../../../../hooks/useInstructorClass";
 import MyClassTable from "./MyClassTable";
 

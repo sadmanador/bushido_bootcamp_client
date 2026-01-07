@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
-import SectionImgBg from "../../elements/SectionImgBg";
-import SectionHeader from "../../elements/SectionHeader";
-import MiddleAlign from "../../elements/MiddleAlign";
+import MiddleAlign from "../../components/common/MiddleAlign";
+import SectionHeader from "../../components/common/SectionHeader";
+import SectionImgBg from "../../components/common/SectionImgBg";
 import ClassCard from "./ClassCard";
 
 const Classes = () => {

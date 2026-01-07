@@ -1,11 +1,16 @@
-import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import SectionHeader from "../../../elements/SectionHeader";
+import { useKeenSlider } from "keen-slider/react";
+import { Fade } from "react-awesome-reveal";
+import SectionHeader from "../../../components/common/SectionHeader";
 
 const Gallery = () => {
   const [sliderRef] = useKeenSlider(
     {
       loop: true,
+      slides: {
+        perView: 1,
+        spacing: 0,
+      },
     },
     [
       (slider) => {
@@ -19,7 +24,7 @@ const Gallery = () => {
           if (mouseOver) return;
           timeout = setTimeout(() => {
             slider.next();
-          }, 4000);
+          }, 5000);
         }
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
@@ -39,36 +44,63 @@ const Gallery = () => {
     ]
   );
 
+  const galleryItems = [
+    {
+      quote: "Achieve what you wish for",
+      img: "assets/image/gallery/gallery1.png"
+    },
+    {
+      quote: "Obedience and peace is the key",
+      img: "assets/image/gallery/gallery2.webp"
+    },
+    {
+      quote: "Fire up your inner warrior",
+      img: "assets/image/gallery/gallery3.jpg"
+    },
+    {
+      quote: "The consistent one stays ahead",
+      img: "assets/image/gallery/gallery4.jpg"
+    },
+    {
+      quote: "Become who you were meant to be",
+      img: "assets/image/gallery/gallery5.jpg"
+    }
+  ];
+
   return (
-    <div className="bg-gray-400 mx-auto max-w-7xl">
-      <SectionHeader heading="Gallery" subHeading="Check out our gallery" />
-      <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide number-slide1 relative">
-          <h2 className="absolute top-10 text-2xl italic">"Achieve what you wish for"</h2>
-          <img src="assets/image/gallery/gallery1.png" alt="" />
-        </div>
-        <div className="keen-slider__slide number-slide2 relative">
-          <h2 className="absolute top-10 text-2xl italic">
-            "Learn, obedience, and peace is the key of martial art"
-          </h2>
-          <img src="assets/image/gallery/gallery2.webp" alt="" />
-        </div>
-        <div className="keen-slider__slide number-slide3 relative">
-          <h2 className="absolute top-10 text-2xl italic">"Fire up your inner worrier"</h2>
-          <img src="assets/image/gallery/gallery3.jpg" alt="" />
-        </div>
-        <div className="keen-slider__slide number-slide4 relative">
-          <h2 className="absolute top-10 text-2xl italic">
-            Consistent one will alway stay ahead
-          </h2>
-          <img src="assets/image/gallery/gallery4.jpg" alt="" />
-        </div>
-        <div className="keen-slider__slide number-slide5 relative">
-          <h2 className="absolute top-10 text-2xl italic">
-            It does not matter where you are from <br />
-            Only matter is what you become
-          </h2>
-          <img src="assets/image/gallery/gallery5.jpg" alt="" />
+    <div className="bg-slate-900 py-24">
+      <div className="container mx-auto px-6 lg:px-24">
+        <SectionHeader heading="Training Gallery" subHeading="A glimpse into the life of a modern warrior" />
+        
+        <div className="relative group overflow-hidden rounded-[3rem] shadow-2xl shadow-bushido-red/10 border border-white/5">
+          <div ref={sliderRef} className="keen-slider h-[500px] md:h-[700px]">
+            {galleryItems.map((item, index) => (
+              <div key={index} className="keen-slider__slide relative overflow-hidden">
+                <img 
+                  src={item.img} 
+                  alt={`Gallery ${index + 1}`} 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                
+                <div className="absolute bottom-20 left-10 md:left-20 max-w-2xl">
+                  <Fade triggerOnce direction="up">
+                    <p className="text-bushido-red font-bold tracking-[0.3em] uppercase text-xs mb-4">Training Moments</p>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white russo-one-regular leading-tight italic">
+                      "{item.quote}"
+                    </h2>
+                  </Fade>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Hints */}
+          <div className="absolute bottom-10 right-10 flex gap-2">
+            <div className="w-12 h-1 w-2 bg-bushido-red rounded-full"></div>
+            <div className="w-2 h-1 bg-white/20 rounded-full"></div>
+            <div className="w-2 h-1 bg-white/20 rounded-full"></div>
+          </div>
         </div>
       </div>
     </div>

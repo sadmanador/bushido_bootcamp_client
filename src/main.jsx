@@ -1,10 +1,10 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./Routes/router/router.jsx";
+import UserContext from "./context/user-context/UserContext.jsx";
 import "./index.css";
-import UserContext from "./contexts/UserContext/UserContext.jsx";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { router } from "./routes/router.jsx";
 
 const queryClient = new QueryClient();
 

@@ -1,24 +1,24 @@
 import { createBrowserRouter } from "react-router-dom";
-import DashBoard from "../../Layouts/DashBoard/DashBoard";
-import Main from "../../Layouts/Main/Main";
-import Classes from "../../pages/Classes/Classes";
-import MangeClasses from "../../pages/Dashboard/Admin/ManageClasses/MangeClasses";
-import ManageUsers from "../../pages/Dashboard/Admin/ManageUsers/ManageUsers";
-import AddAClass from "../../pages/Dashboard/Instructor/AddAClass/AddAClass";
-import MyClassEdit from "../../pages/Dashboard/Instructor/MyClasses/MyClassEdit";
-import MyClasses from "../../pages/Dashboard/Instructor/MyClasses/MyClasses";
-import MyEnrolledClasses from "../../pages/Dashboard/Student/MyEnrolledClasses/MyEnrolledClasses";
-import MySelectedClasses from "../../pages/Dashboard/Student/MySelectedClasses/MySelectedClasses";
-import Payment from "../../pages/Dashboard/Student/Payment/Payment";
-import PaymentHistory from "../../pages/Dashboard/Student/PaymentHistory/PaymentHistory";
-import Home from "../../pages/Home/Home/Home";
-import Instructors from "../../pages/Instructors/Instructors";
-import Login from "../../pages/Login/Login";
-import PageNotFound from "../../pages/PageNotFound/PageNotFound";
-import Register from "../../pages/Register/Register";
-import AdminRoute from "../AdminRoute/AdminRoute";
-import InstructorRoute from "../InstructorRoute/InstructorRoute";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import DashBoard from "../components/layout/dashboard/DashBoard";
+import Main from "../components/layout/main/Main";
+import Classes from "../pages/Classes/Classes";
+import MangeClasses from "../pages/Dashboard/Admin/ManageClasses/MangeClasses";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import AddAClass from "../pages/Dashboard/Instructor/AddAClass/AddAClass";
+import MyClassEdit from "../pages/Dashboard/Instructor/MyClasses/MyClassEdit";
+import MyClasses from "../pages/Dashboard/Instructor/MyClasses/MyClasses";
+import MyEnrolledClasses from "../pages/Dashboard/Student/MyEnrolledClasses/MyEnrolledClasses";
+import MySelectedClasses from "../pages/Dashboard/Student/MySelectedClasses/MySelectedClasses";
+import Payment from "../pages/Dashboard/Student/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/Student/PaymentHistory/PaymentHistory";
+import Home from "../pages/Home";
+import Instructors from "../pages/Instructors/Instructors";
+import Login from "../pages/Login/Login";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
+import Register from "../pages/Register/Register";
+import AdminRoute from "./guards/AdminRoute";
+import InstructorRoute from "./guards/InstructorRoute";
+import PrivateRoute from "./guards/PrivateRoute";
 
 export const router = createBrowserRouter([
   {

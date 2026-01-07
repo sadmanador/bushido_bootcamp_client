@@ -1,6 +1,6 @@
-import SectionHeader from "../../../../elements/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
+import ClassTable from "../../../../components/layout/classtable/ClassTable";
 import useBusket from "../../../../hooks/useBusket";
-import ClassTable from "../../../shared/ClassTable/ClassTable";
 
 const MySelectedClasses = () => {
   const { busket } = useBusket();

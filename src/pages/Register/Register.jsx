@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/layout/social-login/SocialLogin";
 import { imgHostingKey } from "../../constants";
 import useAuth from "../../hooks/useAuth";
-import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 const Register = () => {
   const { signUp, updateUser } = useAuth();

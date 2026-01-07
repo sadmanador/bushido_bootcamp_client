@@ -2,11 +2,11 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import SectionHeader from "../../../../elements/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
+import { paymentGatewayPK } from "../../../../constants";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
 import CheckoutForm from "./CheckoutForm";
-import { paymentGatewayPK } from "../../../../constants";
 
 const stripePromise = loadStripe(paymentGatewayPK);
 
