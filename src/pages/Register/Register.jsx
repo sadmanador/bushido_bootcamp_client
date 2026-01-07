@@ -3,11 +3,12 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { imgHostingKey } from "../../constants";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 const Register = () => {
-  const { signUp, updateUser, googleSignIn } = useAuth();
+  const { signUp, updateUser } = useAuth();
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -29,15 +30,10 @@ const Register = () => {
     const password = data.password;
     const displayName = data.name;
 
-    fetch(
-      `https://api.imgbb.com/1/upload?key=${
-        import.meta.env.VITE_img_hosting_key
-      }`,
-      {
-        method: "POST",
-        body: formData,
-      }
-    )
+    fetch(`https://api.imgbb.com/1/upload?key=${imgHostingKey}`, {
+      method: "POST",
+      body: formData,
+    })
       .then((res) => res.json())
       .then((data) => {
         const photoURL = data.data.url;

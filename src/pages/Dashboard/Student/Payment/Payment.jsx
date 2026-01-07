@@ -6,15 +6,16 @@ import SectionHeader from "../../../../elements/SectionHeader";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
 import CheckoutForm from "./CheckoutForm";
+import { paymentGatewayPK } from "../../../../constants";
 
-const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
+const stripePromise = loadStripe(paymentGatewayPK);
 
 const Payment = () => {
   const classId = useParams();
   const { user, loading } = useAuth();
   const [axiosSecure] = useAxiosSecureToken();
 
-  const {  data: busket } = useQuery({
+  const { data: busket } = useQuery({
     queryKey: ["taken-courses/single", user?.email],
     enabled: !loading,
     queryFn: async () => {
@@ -25,20 +26,15 @@ const Payment = () => {
     },
   });
 
-
-  const price = busket?.price
-  console.log(busket)
-
+  const price = busket?.price;
+  console.log(busket);
 
   return (
     <div>
       <SectionHeader heading={"Payment"} subHeading={"Process the Payment"} />
       <div>
         <Elements stripe={stripePromise}>
-          <CheckoutForm
-            busket={busket}
-            price={price}
-          ></CheckoutForm>
+          <CheckoutForm busket={busket} price={price}></CheckoutForm>
         </Elements>
       </div>
     </div>

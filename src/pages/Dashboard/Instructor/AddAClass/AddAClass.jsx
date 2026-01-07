@@ -5,6 +5,7 @@ import axios from "axios";
 import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { imgHostingKey } from "../../../../constants";
 
 const AddAClass = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const AddAClass = () => {
     axios
       .post(
         `https://api.imgbb.com/1/upload?key=${
-          import.meta.env.VITE_img_hosting_key
+          imgHostingKey
         }`,
         formData
       )

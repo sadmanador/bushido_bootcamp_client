@@ -1,15 +1,14 @@
-import { useParams } from "react-router-dom";
-import useAuth from "../../../../hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
-import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
-import SectionHeader from "../../../../elements/SectionHeader";
-import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { imgHostingKey } from "../../../../constants";
+import SectionHeader from "../../../../elements/SectionHeader";
+import useAuth from "../../../../hooks/useAuth";
+import useAxiosSecureToken from "../../../../hooks/useAxiosSecureToken";
 
 const MyClassEdit = () => {
-  const navigate = useNavigate();
   const { id } = useParams();
   const { user, loading } = useAuth();
   const [axiosSecure] = useAxiosSecureToken();
@@ -38,12 +37,7 @@ const MyClassEdit = () => {
     formData.append("image", data.image[0]);
 
     axios
-      .post(
-        `https://api.imgbb.com/1/upload?key=${
-          import.meta.env.VITE_img_hosting_key
-        }`,
-        formData
-      )
+      .post(`https://api.imgbb.com/1/upload?key=${imgHostingKey}`, formData)
       .then((imgResponse) => {
         if (imgResponse.data.success) {
           const cost = parseFloat(data.price);
@@ -54,7 +48,7 @@ const MyClassEdit = () => {
             price: cost,
             seats: availableSeats,
           };
-          console.log(updatedClass)
+          console.log(updatedClass);
           axiosSecure
             .put(`/classes/myClasses/${_id}?email=${user?.email}`, updatedClass)
             .then((res) => {
