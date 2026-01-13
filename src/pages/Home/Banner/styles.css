@@ -125,7 +125,7 @@ body {
   bottom: 15px;
   width: 100%;
   padding: 0 10px;
-  color: #c33827;
+  color: #fff;
   text-align: center;
   font-weight: 900;
   font-size: 0.9rem;
@@ -138,5 +138,6 @@ body {
 
 .carousel__cell:hover p {
   transform: translateY(-5px);
+  color: #c33827;
   text-shadow: 0 0 15px rgba(195, 56, 39, 0.6), 0 0 5px rgba(195, 56, 39, 0.4);
 }
