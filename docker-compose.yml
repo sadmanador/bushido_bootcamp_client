@@ -1,0 +1,14 @@
+services:
+  react-dev:
+    container_name: bootcamp-react
+    build: .
+    ports:
+      - "5173:5173"
+    volumes:
+      # Mount local code for hot reload
+      - .:/app
+      # Keep node_modules inside container to avoid host conflicts
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
